@@ -64,7 +64,7 @@ export function* signInWithEmail ({ payload: { email, password} }) {
 
 }
 
-export function* signUp ({ payload: { email, password, displayName }}) {
+export function* signUp ({ payload: { email, password, displayName } }) {
 
   try {
     const { user } = yield auth.createUserWithEmailAndPassword(email, password);
@@ -100,7 +100,7 @@ export function* onSignUpStart () {
 
 export function* onSignUpSuccess () {
   yield takeLatest(
-    UserActionTypes.SIGN_IN_SUCCESS,
+    UserActionTypes.SIGN_UP_SUCCESS,
     signInAfterSignUp
   )
 }
